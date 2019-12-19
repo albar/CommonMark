@@ -166,7 +166,7 @@ namespace Bunnypro.CommonMark.Specification.Html.Test
             }
             else if (CurrentLineState == LineState.SpecificationOpening || CurrentLineState == LineState.InsideMarkdown)
             {
-                _markdown.AppendLine(CurrentLine);
+                _markdown.AppendLine(CurrentLine.Replace('→', '\t'));
                 CurrentLineState = LineState.InsideMarkdown;
             }
             else if (CurrentLineState == LineState.SpecificationSeparator || CurrentLineState == LineState.InsideHtml)
