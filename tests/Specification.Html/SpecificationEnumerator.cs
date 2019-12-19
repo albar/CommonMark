@@ -164,12 +164,12 @@ namespace Bunnypro.CommonMark.Specification.Html.Test
                 else
                     CurrentLineState = LineState.SpecificationClosing;
             }
-            else if (new[] { LineState.SpecificationOpening, LineState.InsideMarkdown }.Contains(CurrentLineState))
+            else if (CurrentLineState == LineState.SpecificationOpening || CurrentLineState == LineState.InsideMarkdown)
             {
                 _markdown.AppendLine(CurrentLine);
                 CurrentLineState = LineState.InsideMarkdown;
             }
-            else if (new[] { LineState.SpecificationSeparator, LineState.InsideHtml }.Contains(CurrentLineState))
+            else if (CurrentLineState == LineState.SpecificationSeparator || CurrentLineState == LineState.InsideHtml)
             {
                 _html.AppendLine(CurrentLine);
                 CurrentLineState = LineState.InsideHtml;
