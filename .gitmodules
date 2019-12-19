@@ -1,0 +1,6 @@
+[submodule "src/Specification/spec"]
+	path = src/Specification/spec
+	url = git@github.com:commonmark/commonmark-spec.git
+[submodule "tests/Specification.Html/spec"]
+	path = tests/Specification.Html/spec
+	url = git@github.com:commonmark/commonmark-spec.git
