@@ -7,7 +7,7 @@ namespace Bunnypro.CommonMark.Specification.Html.Test
     public class SpecificationTest
     {
         [Theory]
-        [MemberData(nameof(Specifications))]
+        [MemberData(nameof(SpecificationsData))]
         public void Specification_Test(Specification specification)
         {
             var cmark = new Core.CommonMark();
@@ -15,7 +15,7 @@ namespace Bunnypro.CommonMark.Specification.Html.Test
             Assert.Equal(specification.Html, document.ToHtml());
         }
 
-        public static IEnumerable<object[]> Specifications()
+        public static IEnumerable<object[]> SpecificationsData()
         {
             var enumerator = new SpecificationEnumerator();
             while (enumerator.MoveNextSpecification())
