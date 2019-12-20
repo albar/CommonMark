@@ -160,7 +160,7 @@ namespace Bunnypro.CommonMark.Specification.Html.Test
                     }
                 }
             }
-            else if (Regex.Match(CurrentLine, @"(^.$)|(^`{32}$)") is Match insideMatch && insideMatch.Groups.Count > 1)
+            else if (Regex.Match(CurrentLine, @"(^\.$)|(^`{32}$)") is Match insideMatch && insideMatch.Groups.Count > 1)
             {
                 if (insideMatch.Groups[1].Length > 0)
                     CurrentLineState = LineState.SpecificationSeparator;
