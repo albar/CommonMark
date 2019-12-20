@@ -10,7 +10,7 @@ namespace Bunnypro.CommonMark.Specification.Html.Test
 {
     public class SpecificationEnumerator : IEnumerator<string>, IDisposable
     {
-        private static string _filename = @"spec/spec.txt";
+        private static readonly string _filename = @"spec/spec.txt";
         private StreamReader _reader;
 
         private StringBuilder _markdown;
