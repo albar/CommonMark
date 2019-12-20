@@ -152,7 +152,7 @@ namespace Bunnypro.CommonMark.Specification.Html.Test
                 }
                 else
                 {
-                    var level = outsideMatch.Groups[2].Length;
+                    var level = outsideMatch.Groups[2].Length - 1;
                     _section[level] = outsideMatch.Groups[3].Value;
                     for (var i = level + 1; i < _section.Length; i++)
                     {
