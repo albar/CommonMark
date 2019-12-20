@@ -43,7 +43,7 @@ namespace Bunnypro.CommonMark.Specification.Html.Test
             while (CurrentLineState == LineState.OutsideSpecification && MoveNext())
                 continue;
 
-            return IsEndOfFile;
+            return !IsEndOfFile;
         }
 
         public bool TryGetCurrentSpecification(out Specification specification)
@@ -106,7 +106,7 @@ namespace Bunnypro.CommonMark.Specification.Html.Test
             while (MoveNext() && curretSection.SequenceEqual(_section))
                 continue;
 
-            return IsEndOfFile;
+            return !IsEndOfFile;
         }
 
         public bool MoveNextSection(int level)
@@ -116,7 +116,7 @@ namespace Bunnypro.CommonMark.Specification.Html.Test
             while (MoveNext() && currentSection.SequenceEqual(_section.Take(level).ToArray()))
                 continue;
 
-            return IsEndOfFile;
+            return !IsEndOfFile;
         }
 
         public bool MoveNext()
