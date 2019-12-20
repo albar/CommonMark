@@ -174,7 +174,7 @@ namespace Bunnypro.CommonMark.Specification.Html.Test
             }
             else if (CurrentLineState == LineState.SpecificationSeparator || CurrentLineState == LineState.InsideHtml)
             {
-                _html.AppendLine(CurrentLine);
+                _html.AppendLine(CurrentLine.Replace('→', '\t'));
                 CurrentLineState = LineState.InsideHtml;
             }
 
