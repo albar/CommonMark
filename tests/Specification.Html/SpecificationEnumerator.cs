@@ -121,6 +121,9 @@ namespace Bunnypro.CommonMark.Specification.Html.Test
 
         public bool MoveNext()
         {
+            if (_reader == null)
+                Reset();
+
             var line = _reader.ReadLine();
 
             if (line == null)
